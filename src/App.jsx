@@ -6,11 +6,9 @@ import './App.css'
 import heroImage from './assets/Imagem-do-WhatsApp-de-2023-09-25-a--s--09.jpg'
 import salaoImage from './assets/bac0c8a411b547433ba5c34879bc2011782f1053.jpg'
 import quiosqueImage from './assets/208f7d4926666e6fa43966dab0e0f00f25266f8d.jpg'
-import piscinaImage from './assets/ef94914202cd9c88d4d3e5cf5a2fc2d667f795d0.jpg'
 import quiosque2Image from './assets/Prancheta7.png'
 import piscina2Image from './assets/Prancheta2.png'
 import barImage from './assets/Prancheta9.png'
-import campoFutebolImage from './assets/campo-futebol.jpg'
 import logoImage from './assets/logo.png'
 
 function App() {
