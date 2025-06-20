@@ -545,7 +545,7 @@ Aguardo confirmação. Obrigado!`
               <h3 className="text-xl font-semibold mb-4">Horário de Atendimento</h3>
               <div className="space-y-2 text-gray-300">
                 <p>Segunda a Sexta: 9h às 18h</p>
-                <p>Sábado: 9h às 16h</p>
+                <p>Sábado: 9h às 12:30h</p>
                 <p>Domingo: Sob agendamento</p>
               </div>
             </div>
