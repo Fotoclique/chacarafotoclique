@@ -35,7 +35,7 @@ Horário: ${selectedTime}
 
 Aguardo confirmação. Obrigado!`
 
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/5545998110015?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
     
     setShowSuccess(true)
@@ -440,6 +440,7 @@ Aguardo confirmação. Obrigado!`
                         <option value="15:00">15:00</option>
                         <option value="16:00">16:00</option>
                         <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
                       </select>
                     </div>
                   </div>
@@ -453,7 +454,7 @@ Aguardo confirmação. Obrigado!`
                       <Clock className="h-5 w-5 text-orange-500 mt-1" />
                       <div>
                         <p className="font-semibold text-gray-800">Duração</p>
-                        <p className="text-gray-600">Aproximadamente 1 hora</p>
+                        <p className="text-gray-600">Aproximadamente 30 minutos</p>
                       </div>
                     </div>
                     
@@ -527,7 +528,7 @@ Aguardo confirmação. Obrigado!`
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4 text-orange-500" />
-                  <span className="text-gray-300">(11) 99999-9999</span>
+                  <span className="text-gray-300">(45) 99811-0015</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4 text-orange-500" />
@@ -535,7 +536,7 @@ Aguardo confirmação. Obrigado!`
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="h-4 w-4 text-orange-500" />
-                  <span className="text-gray-300">São Paulo - SP</span>
+                  <span className="text-gray-300">Cascavel - PR</span>
                 </div>
               </div>
             </div>
