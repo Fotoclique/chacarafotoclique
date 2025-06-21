@@ -10,7 +10,7 @@ import piscinaImage from './assets/ef94914202cd9c88d4d3e5cf5a2fc2d667f795d0.jpg'
 import quiosque2Image from './assets/Prancheta7.png'
 import piscina2Image from './assets/Prancheta2.png'
 import barImage from './assets/Prancheta9.png'
-import campoFutebolImage from './assets/Olugarperfeitoparaquembuscadiversãoetranquilidade!Aqui,temosdetudoparafazerdoseudiaumaexperiênciainesquecível.⚽️🌳Alémdonossoincrívelcampodefutebolcomgramahidratada,oferecemosumaamplaáreaverde.jpg' // Imagem do campo de futebol
+import campoFutebolImage from './assets/campo-futebol.jpg' // Imagem do campo de futebol com nome simplificado
 import logoImage from './assets/logo.png'
 
 function App() {
