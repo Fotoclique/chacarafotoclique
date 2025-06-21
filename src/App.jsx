@@ -275,14 +275,14 @@ function App() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="lg:order-2">
+            <div>
               <img 
                 src={barImage} 
                 alt="Bar Molhado" 
                 className="rounded-2xl shadow-2xl w-full h-96 object-cover"
               />
             </div>
-            <div className="lg:order-1">
+            <div>
               <h3 className="text-3xl font-bold text-gray-800 mb-4">Bar Molhado</h3>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Bar molhado integrado à área da piscina, com estrutura completa para servir 
