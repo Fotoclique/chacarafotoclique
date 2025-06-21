@@ -139,3 +139,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+
+.hero-image-position {
+  background-position: top;
+}
+
