@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import { Calendar, MapPin, Phone, Mail, Users, Camera, Waves, TreePine, Star, Clock, CheckCircle, Zap } from 'lucide-react'
 import './App.css'
@@ -28,7 +29,7 @@ function App() {
 
     const message = `Olá! Gostaria de agendar uma visita à Chácara Foto Clique.\n\nNome: ${visitorName}\nTelefone: ${visitorPhone}\nData: ${new Date(selectedDate).toLocaleDateString('pt-BR')}\nHorário: ${selectedTime}\n\nAguardo confirmação. Obrigado!`
 
-    const whatsappUrl = `https://wa.me/5545998110015?text=${encodeURIComponent(message )}`
+    const whatsappUrl = `https://wa.me/5545998110015?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
     
     setShowSuccess(true)
@@ -240,6 +241,39 @@ function App() {
             </div>
           </div>
 
+          {/* Nova Seção: Campo de Futebol */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="lg:order-2">
+              <img 
+                src={campoFutebolImage} 
+                alt="Campo de Futebol Suíço" 
+                className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+              />
+            </div>
+            <div className="lg:order-1">
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">Campo de Futebol Suíço</h3>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Desfrute do nosso campo de futebol suíço com grama hidratada, 
+                perfeito para partidas entre amigos e atividades esportivas em grupo. 
+                Ampla área verde para diversão e lazer.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center text-gray-700">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  Grama hidratada de alta qualidade
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  Ampla área verde para lazer
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  Ideal para atividades esportivas
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="lg:order-2">
               <img 
@@ -323,23 +357,23 @@ function App() {
 
             <div className="group relative overflow-hidden rounded-2xl shadow-lg">
               <img 
+                src={piscina2Image} 
+                alt="Piscina" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold">Piscina</span>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg">
+              <img 
                 src={barImage} 
                 alt="Bar Molhado" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <span className="text-white font-semibold">Bar Molhado</span>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg">
-              <img 
-                src={piscinaImage} 
-                alt="Piscina" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Piscina</span>
               </div>
             </div>
 
@@ -358,93 +392,71 @@ function App() {
       </section>
 
       {/* Agendamento */}
-      <section id="agendamento" className="py-20 bg-orange-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Agende sua <span className="text-orange-500">Visita</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Preencha o formulário abaixo para agendar uma visita à Chácara Foto Clique. 
-              Nossa equipe entrará em contato para confirmar.
-            </p>
-          </div>
+      <section id="agendamento" className="py-20 bg-orange-500 text-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Agende sua <span className="text-white">Visita</span>
+          </h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Venha conhecer a Chácara Foto Clique pessoalmente e planejar seu evento dos sonhos. 
+            Preencha o formulário abaixo para agendar sua visita.
+          </p>
 
-          <div className="max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-xl">
+          <div className="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg text-gray-800">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label htmlFor="name" className="block text-gray-700 text-sm font-semibold mb-2">Seu Nome</label>
+                <label htmlFor="name" className="block text-left text-lg font-semibold mb-2">Seu Nome</label>
                 <input 
                   type="text" 
                   id="name" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  placeholder="Seu nome completo"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  placeholder="Nome Completo" 
                   value={visitorName}
                   onChange={(e) => setVisitorName(e.target.value)}
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-gray-700 text-sm font-semibold mb-2">Seu Telefone</label>
+                <label htmlFor="phone" className="block text-left text-lg font-semibold mb-2">Seu Telefone</label>
                 <input 
                   type="tel" 
                   id="phone" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  placeholder="(XX) XXXXX-XXXX"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  placeholder="(45) 99811-0015" 
                   value={visitorPhone}
                   onChange={(e) => setVisitorPhone(e.target.value)}
                 />
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div>
-                <label htmlFor="date" className="block text-gray-700 text-sm font-semibold mb-2">Data da Visita</label>
+                <label htmlFor="date" className="block text-left text-lg font-semibold mb-2">Data da Visita</label>
                 <input 
                   type="date" 
                   id="date" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                   value={selectedDate}
                   onChange={(e) => setSelectedDate(e.target.value)}
                 />
               </div>
               <div>
-                <label htmlFor="time" className="block text-gray-700 text-sm font-semibold mb-2">Horário Preferencial</label>
-                <select 
+                <label htmlFor="time" className="block text-left text-lg font-semibold mb-2">Horário Preferencial</label>
+                <input 
+                  type="time" 
                   id="time" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                   value={selectedTime}
                   onChange={(e) => setSelectedTime(e.target.value)}
-                >
-                  <option value="">Selecione um horário</option>
-                  <option value="09:00">09:00</option>
-                  <option value="09:30">09:30</option>
-                  <option value="10:00">10:00</option>
-                  <option value="10:30">10:30</option>
-                  <option value="11:00">11:00</option>
-                  <option value="11:30">11:30</option>
-                  <option value="12:00">12:00</option>
-                  <option value="12:30">12:30</option>
-                  <option value="13:00">13:00</option>
-                  <option value="13:30">13:30</option>
-                  <option value="14:00">14:00</option>
-                  <option value="14:30">14:30</option>
-                  <option value="15:00">15:00</option>
-                  <option value="15:30">15:30</option>
-                  <option value="16:00">16:00</option>
-                  <option value="16:30">16:30</option>
-                  <option value="17:00">17:00</option>
-                  <option value="17:30">17:30</option>
-                  <option value="18:00">18:00</option>
-                </select>
+                />
               </div>
             </div>
             <button 
               onClick={handleScheduleVisit} 
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
             >
-              <Calendar className="h-6 w-6" /> Agendar Visita via WhatsApp
+              Agendar Visita via WhatsApp
             </button>
             {showSuccess && (
-              <p className="text-green-600 text-center mt-4 font-semibold">Agendamento enviado! Em breve entraremos em contato.</p>
+              <p className="mt-4 text-green-600 font-semibold">Visita agendada com sucesso! Redirecionando para o WhatsApp...</p>
             )}
           </div>
         </div>
@@ -454,27 +466,24 @@ function App() {
       <footer className="bg-gray-800 text-white py-12">
         <div className="container mx-auto px-6 text-center">
           <div className="mb-8">
-            <h3 className="text-3xl font-bold mb-4">Chácara Foto Clique</h3>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              O local ideal para celebrar seus momentos especiais. Infraestrutura completa 
-              e ambiente acolhedor para eventos inesquecíveis.
-            </p>
+            <img src={logoImage} alt="Chácara Foto Clique" className="h-12 w-auto mx-auto mb-4" />
+            <p className="text-2xl font-bold">Chácara Foto Clique</p>
           </div>
-          <div className="flex flex-wrap justify-center gap-8 mb-8">
-            <div className="flex items-center gap-2">
-              <MapPin className="h-5 w-5 text-orange-500" />
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
+            <div className="flex items-center">
+              <MapPin className="h-5 w-5 mr-2 text-orange-500" />
               <span>Cascavel, Paraná</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Phone className="h-5 w-5 text-orange-500" />
+            <div className="flex items-center">
+              <Phone className="h-5 w-5 mr-2 text-orange-500" />
               <span>(45) 99811-0015</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Mail className="h-5 w-5 text-orange-500" />
+            <div className="flex items-center">
+              <Mail className="h-5 w-5 mr-2 text-orange-500" />
               <span>contato@chacarafotoclique.com.br</span>
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-8 text-gray-500 text-sm">
+          <div className="text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} Chácara Foto Clique. Todos os direitos reservados.
           </div>
         </div>
@@ -484,3 +493,5 @@ function App() {
 }
 
 export default App
+
+
