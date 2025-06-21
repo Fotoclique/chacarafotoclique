@@ -4,7 +4,7 @@ import { Calendar, MapPin, Phone, Mail, Users, Camera, Waves, TreePine, Star, Cl
 import './App.css'
 
 // Importar imagens
-import heroImage from './assets/Imagem-do-WhatsApp-de-2023-09-25-a--s--09.jpg'
+import heroImage from './assets/heroImage.jpg'
 import salaoImage from './assets/bac0c8a411b547433ba5c34879bc2011782f1053.jpg'
 import quiosqueImage from './assets/208f7d4926666e6fa43966dab0e0f00f25266f8d.jpg'
 import piscinaImage from './assets/ef94914202cd9c88d4d3e5cf5a2fc2d667f795d0.jpg'
