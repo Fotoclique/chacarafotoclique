@@ -2,11 +2,7 @@ import { useState } from 'react'
 import { Calendar, MapPin, Phone, Mail, Users, Camera, Waves, TreePine, Star, Clock, CheckCircle, Zap } from 'lucide-react'
 import './App.css'
 
-<<<<<<< HEAD
-// Importar imagens (ajuste conforme sua pasta/assets)
-=======
 // Importar imagens
->>>>>>> cd37dd55 (Initial commit: Chacara Foto Clique landing page)
 import heroImage from './assets/Imagem-do-WhatsApp-de-2023-09-25-a--s--09.jpg'
 import salaoImage from './assets/bac0c8a411b547433ba5c34879bc2011782f1053.jpg'
 import quiosqueImage from './assets/208f7d4926666e6fa43966dab0e0f00f25266f8d.jpg'
@@ -14,11 +10,7 @@ import piscinaImage from './assets/ef94914202cd9c88d4d3e5cf5a2fc2d667f795d0.jpg'
 import quiosque2Image from './assets/Prancheta7.png'
 import piscina2Image from './assets/Prancheta2.png'
 import barImage from './assets/Prancheta9.png'
-<<<<<<< HEAD
-import campoFutebolImage from './assets/campo-futebol2.jpg'
-=======
-import campoFutebolImage from './assets/campo-futebol.jpg'
->>>>>>> cd37dd55 (Initial commit: Chacara Foto Clique landing page)
+import campoFutebolImage from './assets/Olugarperfeitoparaquembuscadiversãoetranquilidade!Aqui,temosdetudoparafazerdoseudiaumaexperiênciainesquecível.⚽️🌳Alémdonossoincrívelcampodefutebolcomgramahidratada,oferecemosumaamplaáreaverde.jpg' // Imagem do campo de futebol
 import logoImage from './assets/logo.png'
 
 function App() {
@@ -34,22 +26,9 @@ function App() {
       return
     }
 
-<<<<<<< HEAD
     const message = `Olá! Gostaria de agendar uma visita à Chácara Foto Clique.\n\nNome: ${visitorName}\nTelefone: ${visitorPhone}\nData: ${new Date(selectedDate).toLocaleDateString('pt-BR')}\nHorário: ${selectedTime}\n\nAguardo confirmação. Obrigado!`
 
-    const whatsappUrl = `https://wa.me/5545998110015?text=${encodeURIComponent(message)}`
-=======
-    const message = `Olá! Gostaria de agendar uma visita à Chácara Foto Clique.
-    
-Nome: ${visitorName}
-Telefone: ${visitorPhone}
-Data: ${new Date(selectedDate).toLocaleDateString('pt-BR')}
-Horário: ${selectedTime}
-
-Aguardo confirmação. Obrigado!`
-
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`
->>>>>>> cd37dd55 (Initial commit: Chacara Foto Clique landing page)
+    const whatsappUrl = `https://wa.me/5545998110015?text=${encodeURIComponent(message )}`
     window.open(whatsappUrl, '_blank')
     
     setShowSuccess(true)
@@ -153,12 +132,6 @@ Aguardo confirmação. Obrigado!`
       </section>
 
       {/* Espaços */}
-<<<<<<< HEAD
-      {/* ... mantém igual ... */}
-
-      {/* Galeria */}
-      {/* ... mantém igual ... */}
-=======
       <section id="espacos" className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -336,29 +309,18 @@ Aguardo confirmação. Obrigado!`
                 <span className="text-white font-semibold">Quiosque</span>
               </div>
             </div>
-            
+
             <div className="group relative overflow-hidden rounded-2xl shadow-lg">
               <img 
-                src={piscina2Image} 
-                alt="Piscina" 
+                src={campoFutebolImage} 
+                alt="Campo de Futebol" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Piscina</span>
+                <span className="text-white font-semibold">Campo de Futebol</span>
               </div>
             </div>
-            
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg">
-              <img 
-                src={salaoImage} 
-                alt="Salão" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Salão</span>
-              </div>
-            </div>
-            
+
             <div className="group relative overflow-hidden rounded-2xl shadow-lg">
               <img 
                 src={barImage} 
@@ -369,245 +331,151 @@ Aguardo confirmação. Obrigado!`
                 <span className="text-white font-semibold">Bar Molhado</span>
               </div>
             </div>
-            
+
             <div className="group relative overflow-hidden rounded-2xl shadow-lg">
               <img 
                 src={piscinaImage} 
-                alt="Área da Piscina" 
+                alt="Piscina" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Área da Piscina</span>
+                <span className="text-white font-semibold">Piscina</span>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg">
+              <img 
+                src={salaoImage} 
+                alt="Salão de Festas" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold">Salão de Festas</span>
               </div>
             </div>
           </div>
         </div>
       </section>
->>>>>>> cd37dd55 (Initial commit: Chacara Foto Clique landing page)
 
       {/* Agendamento */}
-      <section id="agendamento" className="py-20">
+      <section id="agendamento" className="py-20 bg-orange-50">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                Agende sua <span className="text-orange-500">Visita</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Venha conhecer pessoalmente todos os nossos espaços. Agende uma visita 
-                e descubra por que a Chácara Foto Clique é o local perfeito para seu evento.
-              </p>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              Agende sua <span className="text-orange-500">Visita</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Preencha o formulário abaixo para agendar uma visita à Chácara Foto Clique. 
+              Nossa equipe entrará em contato para confirmar.
+            </p>
+          </div>
 
-            <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6">Dados da Visita</h3>
-<<<<<<< HEAD
-=======
-                  
->>>>>>> cd37dd55 (Initial commit: Chacara Foto Clique landing page)
-                  <div className="space-y-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Nome Completo
-                      </label>
-                      <input
-                        type="text"
-                        value={visitorName}
-                        onChange={(e) => setVisitorName(e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                        placeholder="Seu nome completo"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Telefone/WhatsApp
-                      </label>
-                      <input
-                        type="tel"
-                        value={visitorPhone}
-                        onChange={(e) => setVisitorPhone(e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-<<<<<<< HEAD
-                        placeholder="(45) 99811-0015"
-                      />
-                    </div>
-
-                    {/* ...restante igual... */}
-
-=======
-                        placeholder="(11) 99999-9999"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Data da Visita
-                      </label>
-                      <input
-                        type="date"
-                        value={selectedDate}
-                        onChange={(e) => setSelectedDate(e.target.value)}
-                        min={new Date().toISOString().split('T')[0]}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Horário Preferido
-                      </label>
-                      <select
-                        value={selectedTime}
-                        onChange={(e) => setSelectedTime(e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                      >
-                        <option value="">Selecione um horário</option>
-                        <option value="09:00">09:00</option>
-                        <option value="10:00">10:00</option>
-                        <option value="11:00">11:00</option>
-                        <option value="14:00">14:00</option>
-                        <option value="15:00">15:00</option>
-                        <option value="16:00">16:00</option>
-                        <option value="17:00">17:00</option>
-                      </select>
-                    </div>
->>>>>>> cd37dd55 (Initial commit: Chacara Foto Clique landing page)
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-2xl p-6">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6">Informações da Visita</h3>
-<<<<<<< HEAD
-                  <div className="space-y-4">
-                    {/* ...igual... */}
-=======
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <Clock className="h-5 w-5 text-orange-500 mt-1" />
-                      <div>
-                        <p className="font-semibold text-gray-800">Duração</p>
-                        <p className="text-gray-600">Aproximadamente 1 hora</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start space-x-3">
-                      <Users className="h-5 w-5 text-orange-500 mt-1" />
-                      <div>
-                        <p className="font-semibold text-gray-800">Acompanhantes</p>
-                        <p className="text-gray-600">Até 4 pessoas</p>
-                      </div>
-                    </div>
-                    
->>>>>>> cd37dd55 (Initial commit: Chacara Foto Clique landing page)
-                    <div className="flex items-start space-x-3">
-                      <MapPin className="h-5 w-5 text-orange-500 mt-1" />
-                      <div>
-                        <p className="font-semibold text-gray-800">Localização</p>
-<<<<<<< HEAD
-                        <p className="text-gray-600">Cascavel - PR</p>
-                      </div>
-                    </div>
-                  </div>
-                  {/* ...igual... */}
-=======
-                        <p className="text-gray-600">Endereço será enviado via WhatsApp</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-8 p-4 bg-orange-50 rounded-xl">
-                    <p className="text-sm text-orange-800">
-                      <strong>Importante:</strong> Após clicar em "Agendar via WhatsApp", 
-                      você será redirecionado para nosso WhatsApp com todas as informações 
-                      preenchidas. Aguarde nossa confirmação!
-                    </p>
-                  </div>
->>>>>>> cd37dd55 (Initial commit: Chacara Foto Clique landing page)
-                </div>
+          <div className="max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label htmlFor="name" className="block text-gray-700 text-sm font-semibold mb-2">Seu Nome</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  placeholder="Seu nome completo"
+                  value={visitorName}
+                  onChange={(e) => setVisitorName(e.target.value)}
+                />
               </div>
-
-              <div className="mt-8 text-center">
-                <button
-                  onClick={handleScheduleVisit}
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg inline-flex items-center space-x-2"
+              <div>
+                <label htmlFor="phone" className="block text-gray-700 text-sm font-semibold mb-2">Seu Telefone</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  placeholder="(XX) XXXXX-XXXX"
+                  value={visitorPhone}
+                  onChange={(e) => setVisitorPhone(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label htmlFor="date" className="block text-gray-700 text-sm font-semibold mb-2">Data da Visita</label>
+                <input 
+                  type="date" 
+                  id="date" 
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  value={selectedDate}
+                  onChange={(e) => setSelectedDate(e.target.value)}
+                />
+              </div>
+              <div>
+                <label htmlFor="time" className="block text-gray-700 text-sm font-semibold mb-2">Horário Preferencial</label>
+                <select 
+                  id="time" 
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  value={selectedTime}
+                  onChange={(e) => setSelectedTime(e.target.value)}
                 >
-                  <Phone className="h-5 w-5" />
-                  <span>Agendar via WhatsApp</span>
-                </button>
+                  <option value="">Selecione um horário</option>
+                  <option value="09:00">09:00</option>
+                  <option value="09:30">09:30</option>
+                  <option value="10:00">10:00</option>
+                  <option value="10:30">10:30</option>
+                  <option value="11:00">11:00</option>
+                  <option value="11:30">11:30</option>
+                  <option value="12:00">12:00</option>
+                  <option value="12:30">12:30</option>
+                  <option value="13:00">13:00</option>
+                  <option value="13:30">13:30</option>
+                  <option value="14:00">14:00</option>
+                  <option value="14:30">14:30</option>
+                  <option value="15:00">15:00</option>
+                  <option value="15:30">15:30</option>
+                  <option value="16:00">16:00</option>
+                  <option value="16:30">16:30</option>
+                  <option value="17:00">17:00</option>
+                  <option value="17:30">17:30</option>
+                  <option value="18:00">18:00</option>
+                </select>
               </div>
-
-              {showSuccess && (
-                <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-xl text-center">
-                  <div className="flex items-center justify-center space-x-2 text-green-800">
-                    <CheckCircle className="h-5 w-5" />
-                    <span className="font-semibold">Redirecionando para WhatsApp...</span>
-                  </div>
-                </div>
-              )}
             </div>
+            <button 
+              onClick={handleScheduleVisit} 
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+            >
+              <Calendar className="h-6 w-6" /> Agendar Visita via WhatsApp
+            </button>
+            {showSuccess && (
+              <p className="text-green-600 text-center mt-4 font-semibold">Agendamento enviado! Em breve entraremos em contato.</p>
+            )}
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <img src={logoImage} alt="Chácara Foto Clique" className="h-8 w-auto" />
-                <span className="text-2xl font-bold">Chácara Foto Clique</span>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                O espaço perfeito para seus eventos especiais. Locação de chácara com 
-                infraestrutura completa e atendimento personalizado.
-              </p>
+        <div className="container mx-auto px-6 text-center">
+          <div className="mb-8">
+            <h3 className="text-3xl font-bold mb-4">Chácara Foto Clique</h3>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              O local ideal para celebrar seus momentos especiais. Infraestrutura completa 
+              e ambiente acolhedor para eventos inesquecíveis.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-8 mb-8">
+            <div className="flex items-center gap-2">
+              <MapPin className="h-5 w-5 text-orange-500" />
+              <span>Cascavel, Paraná</span>
             </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Contato</h3>
-              <div className="space-y-2">
-                <div className="flex items-center space-x-2">
-                  <Phone className="h-4 w-4 text-orange-500" />
-<<<<<<< HEAD
-                  <span className="text-gray-300">(45) 99811-0015</span>
-=======
-                  <span className="text-gray-300">(11) 99999-9999</span>
->>>>>>> cd37dd55 (Initial commit: Chacara Foto Clique landing page)
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Mail className="h-4 w-4 text-orange-500" />
-                  <span className="text-gray-300">contato@chacarafotoclique.com.br</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <MapPin className="h-4 w-4 text-orange-500" />
-<<<<<<< HEAD
-                  <span className="text-gray-300">Cascavel - PR</span>
-=======
-                  <span className="text-gray-300">São Paulo - SP</span>
->>>>>>> cd37dd55 (Initial commit: Chacara Foto Clique landing page)
-                </div>
-              </div>
+            <div className="flex items-center gap-2">
+              <Phone className="h-5 w-5 text-orange-500" />
+              <span>(45) 99811-0015</span>
             </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Horário de Atendimento</h3>
-              <div className="space-y-2 text-gray-300">
-                <p>Segunda a Sexta: 9h às 18h</p>
-                <p>Sábado: 9h às 16h</p>
-                <p>Domingo: Sob agendamento</p>
-              </div>
+            <div className="flex items-center gap-2">
+              <Mail className="h-5 w-5 text-orange-500" />
+              <span>contato@chacarafotoclique.com.br</span>
             </div>
           </div>
-          
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-            <p className="text-gray-400">
-              © 2024 Chácara Foto Clique. Todos os direitos reservados.
-            </p>
+          <div className="border-t border-gray-700 pt-8 text-gray-500 text-sm">
+            &copy; {new Date().getFullYear()} Chácara Foto Clique. Todos os direitos reservados.
           </div>
         </div>
       </footer>
@@ -616,7 +484,3 @@ Aguardo confirmação. Obrigado!`
 }
 
 export default App
-<<<<<<< HEAD
-=======
-
->>>>>>> cd37dd55 (Initial commit: Chacara Foto Clique landing page)
