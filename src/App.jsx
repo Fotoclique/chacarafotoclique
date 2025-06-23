@@ -4,7 +4,8 @@ import { Calendar, MapPin, Phone, Mail, Users, Camera, Waves, TreePine, Star, Cl
 import './App.css'
 
 // Importar imagens
-import heroImage from './assets/heroImage.jpg'
+import heroImage from './assets/Imagem-do-WhatsApp-de-2023-09-25-a--s--09.jpg'
+import aerialViewImage from './assets/aerial_view.jpg'
 import salaoImage from './assets/bac0c8a411b547433ba5c34879bc2011782f1053.jpg'
 import quiosqueImage from './assets/208f7d4926666e6fa43966dab0e0f00f25266f8d.jpg'
 import piscinaImage from './assets/ef94914202cd9c88d4d3e5cf5a2fc2d667f795d0.jpg'
@@ -21,10 +22,32 @@ function App() {
   const [visitorPhone, setVisitorPhone] = useState('')
   const [showSuccess, setShowSuccess] = useState(false)
 
+  const workingHours = {
+    0: [], // Domingo: Fechado
+    1: ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'], // Segunda
+    2: ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'], // Terça
+    3: ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'], // Quarta
+    4: ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'], // Quinta
+    5: ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'], // Sexta
+    6: ['09:00', '10:00', '11:00', '12:00'], // Sábado: 09:00-12:30 (apenas até 12:00 para intervalos de 1h)
+  };
+
+  const getAvailableTimes = (dateString) => {
+    const date = new Date(dateString + 'T00:00:00'); // Adiciona T00:00:00 para evitar problemas de fuso horário
+    const dayOfWeek = date.getDay(); // 0 = Domingo, 1 = Segunda, ..., 6 = Sábado
+    return workingHours[dayOfWeek] || [];
+  };
+
   const handleScheduleVisit = () => {
     if (!selectedDate || !selectedTime || !visitorName || !visitorPhone) {
-      alert('Por favor, preencha todos os campos para agendar sua visita.')
-      return
+      alert('Por favor, preencha todos os campos para agendar sua visita.');
+      return;
+    }
+
+    const availableTimesForSelectedDay = getAvailableTimes(selectedDate);
+    if (!availableTimesForSelectedDay.includes(selectedTime)) {
+      alert('O horário selecionado não está disponível para a data escolhida. Por favor, verifique os horários de atendimento.');
+      return;
     }
 
     const message = `Olá! Gostaria de agendar uma visita à Chácara Foto Clique.\n\nNome: ${visitorName}\nTelefone: ${visitorPhone}\nData: ${new Date(selectedDate).toLocaleDateString('pt-BR')}\nHorário: ${selectedTime}\n\nAguardo confirmação. Obrigado!`
@@ -324,23 +347,23 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="group relative overflow-hidden rounded-2xl shadow-lg">
               <img 
-                src={heroImage} 
+                src={aerialViewImage} 
                 alt="Vista aérea da chácara" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Vista Aérea</span>
+                <span className="text-white text-2xl font-bold">Vista Aérea</span>
               </div>
             </div>
-            
+
             <div className="group relative overflow-hidden rounded-2xl shadow-lg">
               <img 
-                src={quiosque2Image} 
+                src={quiosqueImage} 
                 alt="Quiosque" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Quiosque</span>
+                <span className="text-white text-2xl font-bold">Quiosque</span>
               </div>
             </div>
 
@@ -351,18 +374,18 @@ function App() {
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Campo de Futebol</span>
+                <span className="text-white text-2xl font-bold">Campo de Futebol</span>
               </div>
             </div>
 
             <div className="group relative overflow-hidden rounded-2xl shadow-lg">
               <img 
-                src={piscina2Image} 
+                src={piscinaImage} 
                 alt="Piscina" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Piscina</span>
+                <span className="text-white text-2xl font-bold">Piscina</span>
               </div>
             </div>
 
@@ -373,7 +396,7 @@ function App() {
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Bar Molhado</span>
+                <span className="text-white text-2xl font-bold">Bar Molhado</span>
               </div>
             </div>
 
@@ -384,7 +407,7 @@ function App() {
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Salão de Festas</span>
+                <span className="text-white text-2xl font-bold">Salão de Festas</span>
               </div>
             </div>
           </div>
@@ -392,72 +415,84 @@ function App() {
       </section>
 
       {/* Agendamento */}
-      <section id="agendamento" className="py-20 bg-orange-500 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Agende sua <span className="text-white">Visita</span>
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Venha conhecer a Chácara Foto Clique pessoalmente e planejar seu evento dos sonhos. 
-            Preencha o formulário abaixo para agendar sua visita.
-          </p>
+      <section id="agendamento" className="py-20 bg-gray-100">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              Agende sua <span className="text-orange-500">Visita</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Venha conhecer a Chácara Foto Clique pessoalmente e planejar seu evento dos sonhos. 
+              Preencha o formulário abaixo para agendar sua visita.
+            </p>
+          </div>
 
-          <div className="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg text-gray-800">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-xl">
+            <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-left text-lg font-semibold mb-2">Seu Nome</label>
+                <label htmlFor="visitorName" className="block text-lg font-medium text-gray-700 mb-2">Seu Nome</label>
                 <input 
                   type="text" 
-                  id="name" 
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  placeholder="Nome Completo" 
+                  id="visitorName" 
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500 text-lg"
+                  placeholder="Seu nome completo"
                   value={visitorName}
                   onChange={(e) => setVisitorName(e.target.value)}
+                  required
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-left text-lg font-semibold mb-2">Seu Telefone</label>
+                <label htmlFor="visitorPhone" className="block text-lg font-medium text-gray-700 mb-2">Seu Telefone</label>
                 <input 
                   type="tel" 
-                  id="phone" 
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  placeholder="(45) 99811-0015" 
+                  id="visitorPhone" 
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500 text-lg"
+                  placeholder="(99) 99999-9999"
                   value={visitorPhone}
                   onChange={(e) => setVisitorPhone(e.target.value)}
+                  required
                 />
               </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div>
-                <label htmlFor="date" className="block text-left text-lg font-semibold mb-2">Data da Visita</label>
+                <label htmlFor="selectedDate" className="block text-lg font-medium text-gray-700 mb-2">Data da Visita</label>
                 <input 
                   type="date" 
-                  id="date" 
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  id="selectedDate" 
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500 text-lg"
                   value={selectedDate}
-                  onChange={(e) => setSelectedDate(e.target.value)}
+                  onChange={(e) => {
+                    setSelectedDate(e.target.value);
+                    setSelectedTime(''); // Reset time when date changes
+                  }}
+                  required
                 />
               </div>
               <div>
-                <label htmlFor="time" className="block text-left text-lg font-semibold mb-2">Horário Preferencial</label>
-                <input 
-                  type="time" 
-                  id="time" 
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                <label htmlFor="selectedTime" className="block text-lg font-medium text-gray-700 mb-2">Horário Preferencial</label>
+                <select 
+                  id="selectedTime" 
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500 text-lg"
                   value={selectedTime}
                   onChange={(e) => setSelectedTime(e.target.value)}
-                />
+                  required
+                >
+                  <option value="">Selecione um horário</option>
+                  {selectedDate && getAvailableTimes(selectedDate).map((time) => (
+                    <option key={time} value={time}>{time}</option>
+                  ))}
+                </select>
               </div>
-            </div>
-            <button 
-              onClick={handleScheduleVisit} 
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
-            >
-              Agendar Visita via WhatsApp
-            </button>
-            {showSuccess && (
-              <p className="mt-4 text-green-600 font-semibold">Visita agendada com sucesso! Redirecionando para o WhatsApp...</p>
-            )}
+              <button 
+                type="button" 
+                onClick={handleScheduleVisit} 
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg text-xl font-semibold transition-all transform hover:scale-105 shadow-lg"
+              >
+                Agendar Visita via WhatsApp
+              </button>
+              {showSuccess && (
+                <p className="text-green-600 text-center mt-4">Agendamento enviado com sucesso!</p>
+              )}
+            </form>
           </div>
         </div>
       </section>
@@ -466,24 +501,18 @@ function App() {
       <footer className="bg-gray-800 text-white py-12">
         <div className="container mx-auto px-6 text-center">
           <div className="mb-8">
-            <img src={logoImage} alt="Chácara Foto Clique" className="h-12 w-auto mx-auto mb-4" />
-            <p className="text-2xl font-bold">Chácara Foto Clique</p>
-          </div>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
-            <div className="flex items-center">
-              <MapPin className="h-5 w-5 mr-2 text-orange-500" />
-              <span>Cascavel, Paraná</span>
+            <h3 className="text-2xl font-bold mb-4">Chácara Foto Clique</h3>
+            <p className="text-gray-400 mb-2">O espaço perfeito para seus eventos.</p>
+            <div className="flex items-center justify-center text-gray-400 mb-2">
+              <MapPin className="h-5 w-5 mr-2" />
+              Cascavel, Paraná
             </div>
-            <div className="flex items-center">
-              <Phone className="h-5 w-5 mr-2 text-orange-500" />
-              <span>(45) 99811-0015</span>
-            </div>
-            <div className="flex items-center">
-              <Mail className="h-5 w-5 mr-2 text-orange-500" />
-              <span>contato@chacarafotoclique.com.br</span>
+            <div className="flex items-center justify-center text-gray-400">
+              <Phone className="h-5 w-5 mr-2" />
+              (45) 99811-0015
             </div>
           </div>
-          <div className="text-gray-400 text-sm">
+          <div className="border-t border-gray-700 pt-8 text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} Chácara Foto Clique. Todos os direitos reservados.
           </div>
         </div>
